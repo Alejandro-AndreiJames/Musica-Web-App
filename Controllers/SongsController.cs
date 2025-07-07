@@ -67,6 +67,7 @@ namespace Musica_Web_App.Controllers
         // POST: Songs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,SongQuestion,SongAnswer")] Song song)
@@ -81,6 +82,7 @@ namespace Musica_Web_App.Controllers
         }
 
         // GET: Songs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -99,6 +101,7 @@ namespace Musica_Web_App.Controllers
         // POST: Songs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,SongQuestion,SongAnswer")] Song song)
@@ -132,6 +135,7 @@ namespace Musica_Web_App.Controllers
         }
 
         // GET: Songs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +154,7 @@ namespace Musica_Web_App.Controllers
         }
 
         // POST: Songs/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
