@@ -31,6 +31,12 @@ namespace Musica_Web_App.Controllers
             return View();
         }
 
+        // POST: Songs/ShowSearchResult
+        public async Task<IActionResult> ShowSearchResult(String SearchPhrase)
+        {
+            return View("Index", await _context.Song.Where( s => s.SongQuestion.Contains(SearchPhrase)).ToListAsync());
+        }
+
         // GET: Songs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
