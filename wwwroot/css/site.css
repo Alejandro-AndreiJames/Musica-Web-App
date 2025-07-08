@@ -17,6 +17,251 @@ html {
   min-height: 100%;
 }
 
+/* --- Musica Modern Light Theme --- */
 body {
-  margin-bottom: 60px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #f7f9fb;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+.music-quiz-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3BBA9C;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.music-quiz-header .icon {
+    font-size: 2.5rem;
+}
+
+.create-quiz-btn, .btn-action, .hero-btn {
+    display: inline-block;
+    background: #3BBA9C;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7em 1.5em;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 1.5em;
+    margin-right: 0.5em;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(59,186,156,0.08);
+    border: none;
+    cursor: pointer;
+}
+.create-quiz-btn:hover, .btn-action:hover, .hero-btn:hover {
+    background: #2E3047;
+    color: #3BBA9C;
+    box-shadow: 0 4px 16px rgba(59,186,156,0.15);
+}
+
+.table {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(59,186,156,0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 2em auto;
+}
+
+.table th, .table td {
+    border: none;
+    padding: 1em;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.table th {
+    background: #3BBA9C;
+    color: #fff;
+    font-weight: 700;
+}
+
+.table tr:nth-child(even) {
+    background: #f1f5f9;
+}
+
+.table tr:hover {
+    background: #e0f7f3;
+    transition: background 0.2s;
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+}
+
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    align-items: center;
+}
+
+.btn-small {
+    font-size: 0.95em;
+    padding: 0.4em 1em;
+    margin-bottom: 0.2em;
+    min-width: 100px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.same-width-btn {
+    min-width: 100px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .music-quiz-header {
+        font-size: 1.5rem;
+    }
+    .table th, .table td {
+        font-size: 1em;
+        padding: 0.5em;
+    }
+}
+@media (max-width: 600px) {
+    .music-quiz-header {
+        font-size: 1.2rem;
+    }
+    .table, .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+        width: 100%;
+    }
+    .table tr {
+        margin-bottom: 1em;
+        border-radius: 12px;
+        box-shadow: 0 1px 4px rgba(59,186,156,0.08);
+    }
+    .table th {
+        text-align: left;
+        padding: 0.5em 1em;
+    }
+    .table td {
+        text-align: left;
+        padding: 0.5em 1em;
+    }
+    .btn-group {
+        flex-direction: column;
+        gap: 0.3em;
+    }
+}
+
+/* Home page hero styles */
+.home-hero {
+    min-height: 60vh;
+    background: #f7f9fb;
+    color: #3BBA9C;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 2em;
+    padding: 3em 1em;
+    text-align: center;
+}
+.home-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    color: #3BBA9C;
+}
+.home-hero p {
+    font-size: 1.3rem;
+    color: #707793;
+    margin-bottom: 1.5em;
+}
+.home-hero .hero-btn {
+    margin-top: 1em;
+}
+
+/* Info section */
+.info-section {
+    max-width: 900px;
+    margin: 2em auto;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(59,186,156,0.08);
+    padding: 2em;
+    color: #3BBA9C;
+    text-align: center;
+}
+.info-section h2 {
+    color: #3BBA9C;
+}
+.info-section ul {
+    font-size: 1.1em;
+    color: #707793;
+    margin-left: 1.5em;
+    text-align: left;
+    display: inline-block;
+}
+
+/* General link styles */
+a {
+    color: #3BBA9C;
+    font-weight: 600;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.form-control {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 0.7em;
+    font-size: 1.1em;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    background: #f7f9fb;
+    color: #222;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+    border-color: #3BBA9C;
+    outline: none;
+    box-shadow: 0 0 0 2px #3bba9c33;
+}
+.form-group {
+    margin-bottom: 1.5em;
+}
+.btn-action {
+    display: inline-block;
+    background: #3BBA9C;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.7em 1.5em;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-bottom: 0;
+    margin-right: 0.5em;
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(59,186,156,0.08);
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+.btn-action:hover, .btn-action:focus {
+    background: #2E3047;
+    color: #3BBA9C;
+    box-shadow: 0 4px 16px rgba(59,186,156,0.15);
+}
+.btn-action[style*="background: #eee"] {
+    background: #eee !important;
+    color: #3BBA9C !important;
+    border: 1px solid #3BBA9C;
+}
+.btn-action[style*="background: #eee"]:hover, .btn-action[style*="background: #eee"]:focus {
+    background: #3BBA9C !important;
+    color: #fff !important;
 }

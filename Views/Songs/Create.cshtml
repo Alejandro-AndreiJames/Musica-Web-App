@@ -5,34 +5,26 @@
 }
 
 <h1>Create</h1>
-
 <h4>Song</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="SongQuestion" class="control-label"></label>
-                <input asp-for="SongQuestion" class="form-control" />
-                <span asp-validation-for="SongQuestion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SongAnswer" class="control-label"></label>
-                <input asp-for="SongAnswer" class="form-control" />
-                <span asp-validation-for="SongAnswer" class="text-danger"></span>
-            </div>
-            <div class="form-group mt-3">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<div style="max-width: 500px; background: #fff; border-radius: 18px; box-shadow: 0 2px 12px rgba(59,186,156,0.08); padding: 2em; margin-bottom: 2em;">
+    <form asp-action="Create">
+        <div class="form-group">
+            <label asp-for="SongQuestion" class="control-label"></label>
+            <input asp-for="SongQuestion" class="form-control" />
+            <span asp-validation-for="SongQuestion" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SongAnswer" class="control-label"></label>
+            <input asp-for="SongAnswer" class="form-control" />
+            <span asp-validation-for="SongAnswer" class="text-danger"></span>
+        </div>
+        <div style="display: flex; gap: 1em;">
+            <button type="submit" class="btn-action">Create</button>
+            <a asp-action="Index" class="btn-action" style="background: #eee; color: #3BBA9C;">Back</a>
+        </div>
+    </form>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

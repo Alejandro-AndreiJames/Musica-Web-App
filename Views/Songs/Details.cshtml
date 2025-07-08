@@ -22,6 +22,14 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SongAnswer)
         </dd>
+        <dt class="col-sm-2">Created By</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedBy)</dd>
+        <dt class="col-sm-2">Created Date</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedDate)</dd>
+        <dt class="col-sm-2">Modified By</dt>
+        <dd class="col-sm-10">@(Model.ModifiedBy ?? "")</dd>
+        <dt class="col-sm-2">Modified Date</dt>
+        <dd class="col-sm-10">@(Model.ModifiedDate?.ToString() ?? "")</dd>
     </dl>
 </div>
 <div>

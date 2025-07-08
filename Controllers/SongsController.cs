@@ -74,6 +74,10 @@ namespace Musica_Web_App.Controllers
         {
             if (ModelState.IsValid)
             {
+                song.CreatedBy = User.Identity.Name;
+                song.CreatedDate = DateTime.Now;
+                song.ModifiedBy = null;
+                song.ModifiedDate = null;
                 _context.Add(song);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -104,34 +108,21 @@ namespace Musica_Web_App.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,SongQuestion,SongAnswer")] Song song)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id != song.Id)
+            var songToUpdate = await _context.Song.FindAsync(id);
+            if (songToUpdate == null)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            if (await TryUpdateModelAsync<Song>(songToUpdate, "", s => s.SongQuestion, s => s.SongAnswer))
             {
-                try
-                {
-                    _context.Update(song);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SongExists(song.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                songToUpdate.ModifiedBy = User.Identity.Name;
+                songToUpdate.ModifiedDate = DateTime.Now;
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(song);
+            return View(songToUpdate);
         }
 
         // GET: Songs/Delete/5
