@@ -265,3 +265,48 @@ a:hover {
     background: #3BBA9C !important;
     color: #fff !important;
 }
+
+/* Navbar styles */
+.navbar, header nav, .navbar-default {
+    background: #111 !important;
+    color: #fff !important;
+    border: none;
+    box-shadow: none;
+}
+.navbar .navbar-brand, header nav .navbar-brand {
+    color: #3BBA9C !important;
+    font-weight: 700;
+}
+.navbar .navbar-text, .navbar-username {
+    color: #3BBA9C !important;
+    font-weight: 600;
+}
+.navbar a, .navbar-nav a, header nav a {
+    color: #fff !important;
+    font-weight: 400;
+    transition: color 0.2s;
+    text-decoration: none !important;
+}
+.navbar a:hover, .navbar-nav a:hover, header nav a:hover {
+    color: #238e73 !important;
+    text-decoration: none !important;
+}
+.navbar .nav-link.active, .navbar-nav .nav-link.active, header nav .nav-link.active {
+    color: #3BBA9C !important;
+    font-weight: 700;
+    background: none;
+    text-decoration: none !important;
+}
+.logout-icon {
+    color: #fff !important;
+    font-size: 1.1em;
+    background: none;
+    border: none;
+    padding: 0 0.5em;
+    cursor: pointer;
+    transition: color 0.2s;
+    vertical-align: middle;
+}
+.logout-icon:hover, .logout-icon:focus {
+    color: #ff3b3b !important;
+}
