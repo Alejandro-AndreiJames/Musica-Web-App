@@ -4,35 +4,26 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Song</h4>
+<h1 class="music-quiz-header" style="margin-bottom: 0.5em;">Details</h1>
+<div style="max-width: 600px; background: #fff; border-radius: 18px; box-shadow: 0 2px 12px rgba(59,186,156,0.08); padding: 2em; margin-bottom: 2em; margin-top: 1.5em;">
+    <h4 style="color: #3BBA9C; font-weight: 700; margin-bottom: 1em;">Song</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SongQuestion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SongQuestion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SongAnswer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SongAnswer)
-        </dd>
-        <dt class="col-sm-2">Created By</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedBy)</dd>
-        <dt class="col-sm-2">Created Date</dt>
-        <dd class="col-sm-10">@Html.DisplayFor(model => model.CreatedDate)</dd>
-        <dt class="col-sm-2">Modified By</dt>
-        <dd class="col-sm-10">@(Model.ModifiedBy ?? "")</dd>
-        <dt class="col-sm-2">Modified Date</dt>
-        <dd class="col-sm-10">@(Model.ModifiedDate?.ToString() ?? "")</dd>
+    <dl class="row" style="margin-bottom: 1.5em;">
+        <dt class = "col-sm-4" style="font-weight: 600;">@Html.DisplayNameFor(model => model.SongQuestion)</dt>
+        <dd class = "col-sm-8">@Html.DisplayFor(model => model.SongQuestion)</dd>
+        <dt class = "col-sm-4" style="font-weight: 600;">@Html.DisplayNameFor(model => model.SongAnswer)</dt>
+        <dd class = "col-sm-8">@Html.DisplayFor(model => model.SongAnswer)</dd>
+        <dt class="col-sm-4" style="font-weight: 600;">Created By</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.CreatedBy)</dd>
+        <dt class="col-sm-4" style="font-weight: 600;">Created Date</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.CreatedDate)</dd>
+        <dt class="col-sm-4" style="font-weight: 600;">Modified By</dt>
+        <dd class="col-sm-8">@(Model.ModifiedBy ?? "")</dd>
+        <dt class="col-sm-4" style="font-weight: 600;">Modified Date</dt>
+        <dd class="col-sm-8">@(Model.ModifiedDate?.ToString() ?? "")</dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div style="display: flex; gap: 1em;">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-action">Edit</a>
+        <a asp-action="Index" class="btn-back">Back</a>
+    </div>
 </div>

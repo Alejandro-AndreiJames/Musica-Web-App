@@ -29,18 +29,28 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.SongQuestion)</td>
                 <td>@(item.CreatedBy ?? "")</td>
-                <td>@(item.CreatedDate?.ToString() ?? "")</td>
+                <td>
+                    @(item.CreatedDate?.ToString("M/d/yyyy") ?? "")<br />
+                    <span style="color: #707793; font-size: 0.95em;">@(item.CreatedDate?.ToString("h:mm:ss tt") ?? "")</span>
+                </td>
                 <td>@(item.ModifiedBy ?? "")</td>
-                <td>@(item.ModifiedDate?.ToString() ?? "")</td>
+                <td>
+                    @(item.ModifiedDate?.ToString("M/d/yyyy") ?? "")<br />
+                    <span style="color: #707793; font-size: 0.95em;">@(item.ModifiedDate?.ToString("h:mm:ss tt") ?? "")</span>
+                </td>
                 <td>
                     <div class="btn-group-vertical">
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-action btn-small same-width-btn">Edit</a>
                         <a asp-action="Details" asp-route-id="@item.Id" class="btn-action btn-small same-width-btn">View</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-action btn-small same-width-btn">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn-action btn-small same-width-btn btn-edit">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-action btn-small same-width-btn btn-delete">Delete</a>
                     </div>
                 </td>
             </tr>
 }
         </tbody>
     </table>
+    @if (!Model.Any())
+    {
+        <div style="text-align:center; color:#707793; font-size:1.2em; margin-top:2em;">No questions found.</div>
+    }
 </div>

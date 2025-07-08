@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Musica</title>
+    <title>Musica</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎵</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Musica_Web_App.styles.css" asp-append-version="true" />
@@ -39,7 +40,7 @@
                             <a class="nav-link @(currentController == "Songs" ? "active" : "")" asp-controller="Songs" asp-action="Index">Musica Test</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link @(currentController == "Home" && currentAction == "Search" ? "active" : "")" asp-controller="Home" asp-action="Search">Search</a>
+                            <a class="nav-link @(currentController == "Songs" && currentAction == "ShowSearchForm" ? "active" : "")" asp-controller="Songs" asp-action="ShowSearchForm">Search</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

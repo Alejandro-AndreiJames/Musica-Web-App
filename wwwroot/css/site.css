@@ -28,10 +28,10 @@ body {
 }
 
 .music-quiz-header {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #3BBA9C;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.7em;
     margin-top: 1.5rem;
     text-align: center;
 }
@@ -73,9 +73,9 @@ body {
 
 .table th, .table td {
     border: none;
-    padding: 1em;
+    font-size: 1em;
+    padding: 0.6em 1em;
     text-align: center;
-    font-size: 1.1em;
 }
 
 .table th {
@@ -102,7 +102,7 @@ body {
 .btn-group-vertical {
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.15em;
     align-items: center;
 }
 
@@ -121,18 +121,40 @@ body {
     box-sizing: border-box;
 }
 
+.btn-action, .btn, .btn-small, .btn-group .btn, .btn-group-vertical .btn-action {
+    font-size: 0.65em;
+    padding: 0.25em 0.7em;
+    min-width: 56px;
+    width: 56px;
+    min-height: 32px;
+    border-radius: 16px;
+    margin: 0.08em 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+}
+
 @media (max-width: 900px) {
     .music-quiz-header {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .table th, .table td {
-        font-size: 1em;
-        padding: 0.5em;
+        font-size: 0.95em;
+        padding: 0.4em 0.7em;
+    }
+    .btn-action, .btn, .btn-small, .btn-group .btn {
+        font-size: 0.9em;
+        padding: 0.35em 0.7em;
+        min-width: 65px;
+        width: 65px;
     }
 }
+
 @media (max-width: 600px) {
     .music-quiz-header {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .table, .table thead, .table tbody, .table th, .table td, .table tr {
         display: block;
@@ -154,6 +176,12 @@ body {
     .btn-group {
         flex-direction: column;
         gap: 0.3em;
+    }
+    .btn-action, .btn, .btn-small, .btn-group .btn {
+        font-size: 0.85em;
+        padding: 0.25em 0.5em;
+        min-width: 50px;
+        width: 50px;
     }
 }
 
@@ -236,25 +264,28 @@ a:hover {
     margin-bottom: 1.5em;
 }
 .btn-action {
-    display: inline-block;
-    background: #3BBA9C;
-    color: #fff;
-    font-weight: 600;
-    padding: 0.7em 1.5em;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-bottom: 0;
-    margin-right: 0.5em;
-    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(59,186,156,0.08);
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
+    background: #3BBA9C !important;
+    color: #fff !important;
+    border: none !important;
+    font-size: 0.65em;
+    padding: 0.25em 0.7em;
+    min-width: 56px;
+    width: 56px;
+    min-height: 32px;
+    border-radius: 16px;
+    margin: 0.08em 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-decoration: none !important;
+    transition: background 0.2s, color 0.2s;
 }
 .btn-action:hover, .btn-action:focus {
-    background: #2E3047;
-    color: #3BBA9C;
-    box-shadow: 0 4px 16px rgba(59,186,156,0.15);
+    background: #238e73 !important;
+    color: #fff !important;
+    text-decoration: none !important;
 }
 .btn-action[style*="background: #eee"] {
     background: #eee !important;
@@ -320,4 +351,58 @@ body {
 footer {
     margin-top: auto;
     width: 100%;
+}
+
+.btn-edit {
+    background: #222 !important;
+    color: #fff !important;
+    border: none !important;
+}
+.btn-edit:hover, .btn-edit:focus {
+    background: #444 !important;
+    color: #3BBA9C !important;
+}
+
+.btn-delete {
+    background: #ff3b3b !important;
+    color: #fff !important;
+    border: none !important;
+}
+.btn-delete:hover, .btn-delete:focus {
+    background: #b80000 !important;
+    color: #fff !important;
+}
+
+.btn-action:hover, .btn-action:focus,
+.btn:hover, .btn:focus,
+.btn-small:hover, .btn-small:focus,
+.btn-group .btn:hover, .btn-group .btn:focus,
+.btn-group-vertical .btn-action:hover, .btn-group-vertical .btn-action:focus,
+.btn-edit:hover, .btn-edit:focus,
+.btn-delete:hover, .btn-delete:focus {
+    text-decoration: none !important;
+}
+
+.btn-back {
+    background: #ff3b3b !important;
+    color: #fff !important;
+    border: none !important;
+    font-size: 0.65em;
+    padding: 0.25em 0.7em;
+    min-width: 56px;
+    width: 56px;
+    min-height: 32px;
+    border-radius: 16px;
+    margin: 0.08em 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-decoration: none !important;
+}
+.btn-back:hover, .btn-back:focus {
+    background: #b80000 !important;
+    color: #fff !important;
+    text-decoration: none !important;
 }
