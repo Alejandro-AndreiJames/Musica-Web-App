@@ -159,37 +159,37 @@ body {
 
 /* Home page hero styles */
 .home-hero {
-    min-height: 60vh;
+    min-height: 38vh;
     background: #f7f9fb;
     color: #3BBA9C;
     border-radius: 0 0 40px 40px;
-    margin-bottom: 2em;
-    padding: 3em 1em;
+    margin-bottom: 1.2em;
+    padding: 2.7em 1.7em;
     text-align: center;
 }
 .home-hero h1 {
     font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.2em;
     color: #3BBA9C;
 }
 .home-hero p {
     font-size: 1.3rem;
     color: #707793;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
 }
 .home-hero .hero-btn {
-    margin-top: 1em;
+    margin-top: 0.3em;
 }
 
 /* Info section */
 .info-section {
-    max-width: 900px;
-    margin: 2em auto;
+    max-width: 1300px;
+    margin: 2.5em auto 0 auto;
     background: #fff;
     border-radius: 24px;
     box-shadow: 0 2px 12px rgba(59,186,156,0.08);
-    padding: 2em;
+    padding: 3.5em 2.7em;
     color: #3BBA9C;
     text-align: center;
 }
@@ -309,4 +309,15 @@ a:hover {
 }
 .logout-icon:hover, .logout-icon:focus {
     color: #ff3b3b !important;
+}
+
+/* Sticky footer */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+    width: 100%;
 }
